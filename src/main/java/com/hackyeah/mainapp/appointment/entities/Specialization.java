@@ -1,4 +1,4 @@
-package com.hackyeah.mainapp.entities;
+package com.hackyeah.mainapp.appointment.entities;
 
 public enum Specialization {
 

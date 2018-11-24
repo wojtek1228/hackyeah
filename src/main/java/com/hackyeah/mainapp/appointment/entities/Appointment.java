@@ -1,8 +1,7 @@
-package com.hackyeah.mainapp.entities;
+package com.hackyeah.mainapp.appointment.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.jvnet.hk2.config.Element;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -24,6 +23,15 @@ public class Appointment {
 
     @Column(name = "DAYS_TO_APPOINTMENT")
     private Integer daysToAppointment;
+
+    @Column(name = "SUBSCRIPTION_DATE")
+    private Integer subscriptionDate;
+
+    @Column(name = "LONGTITUDE")
+    private String longitude;
+
+    @Column(name = "LATTITUDE")
+    private String lattitude;
 
     @Column(name = "NAME")
     private String name;
