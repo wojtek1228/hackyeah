@@ -28,4 +28,6 @@ public class AppointmentDTO {
     private Date homeNumber;
 
     private String postalCode;
+
+    private Date subscriptionDate;
 }
