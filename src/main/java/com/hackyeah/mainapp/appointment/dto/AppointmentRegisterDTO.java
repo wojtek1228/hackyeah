@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class AppointmentDTO {
+public class AppointmentRegisterDTO {
 
     private SpecializationDTO specialization;
 

@@ -8,9 +8,9 @@ import java.util.Date;
 
 @Getter
 @Setter
-@Table(name = "APPOINTMENT")
+@Table(name = "APPOINTMENT_REGISTER")
 @javax.persistence.Entity
-public class Appointment {
+public class AppointmentRegister {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
