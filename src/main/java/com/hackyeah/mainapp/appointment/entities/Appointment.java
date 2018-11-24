@@ -25,9 +25,9 @@ public class Appointment {
     private Integer daysToAppointment;
 
     @Column(name = "SUBSCRIPTION_DATE")
-    private Integer subscriptionDate;
+    private Date subscriptionDate;
 
-    @Column(name = "LONGTITUDE")
+    @Column(name = "LONGITUDE")
     private String longitude;
 
     @Column(name = "LATTITUDE")
