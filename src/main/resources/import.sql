@@ -9,9 +9,9 @@ INSERT INTO appointment_register (id,lattitude, longitude, specialization, days_
 INSERT INTO appointment_register (id,lattitude, longitude, specialization, days_to_appointment, subscription_date, surname,city) VALUES ('5','52.411874', '16.963591', 'KARDIOLOG', '46', '2018-10-19', 'Jankowiak','Poznan');
 INSERT INTO appointment_register (id,lattitude, longitude, specialization, days_to_appointment, subscription_date, surname,city) VALUES ('6','52.413106', '16.958623', 'KARDIOLOG', '49', '2018-10-22', 'Firlej','Lubon');
 
-INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('1','KARDIOLOG', '2018-10-22', 'Uslugi Kardologiczne1','Glogowska1');
-INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('2','KARDIOLOG', '2018-10-21', 'Uslugi Kardologiczne2','Glogowska2');
-INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('3','KARDIOLOG', '2018-10-23', 'Uslugi Kardologiczne3','Glogowska3');
-INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('4','KARDIOLOG', '2018-10-24', 'Uslugi Kardologiczne4','Glogowska4');
-INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('5','KARDIOLOG', '2018-10-25', 'Uslugi Kardologiczne5','Glogowska5');
-INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('6','KARDIOLOG', '2018-10-28', 'Uslugi Kardologiczne6','Glogowska6');
+INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('1','KARDIOLOG', '2018-12-22', 'Uslugi Kardologiczne1','Glogowska1');
+INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('2','KARDIOLOG', '2018-12-21', 'Uslugi Kardologiczne2','Glogowska2');
+INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('3','KARDIOLOG', '2018-12-23', 'Uslugi Kardologiczne3','Glogowska3');
+INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('4','KARDIOLOG', '2018-12-24', 'Uslugi Kardologiczne4','Glogowska4');
+INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('5','KARDIOLOG', '2018-12-25', 'Uslugi Kardologiczne5','Glogowska5');
+INSERT INTO appointment_cancelled (id,specialization, APPOINTMENT_DATE, place_name, street) VALUES ('6','KARDIOLOG', '2018-12-28', 'Uslugi Kardologiczne6','Glogowska6');
