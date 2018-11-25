@@ -18,7 +18,11 @@ export class GetStatsService {
   }
 
   getHotAppointments(specialisation?: string): any {
-    return this.http.get('http://localhost:8080/nfzAppointments/KARDIOLOG?city=Warszawa&province=07');
+    return this.http.get('http://localhost:8080/hotAppointment/KARDIOLOG');
+  }
+
+  getAppointments(specialisation: string, city: string, province: string): any {
+    return this.http.get(`http://localhost:8080/nfzAppointments/${specialisation}?city=${city}&province=${province}`);
   }
 }
 

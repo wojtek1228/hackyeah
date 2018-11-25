@@ -18,7 +18,6 @@ import { PageAboutComponent } from './components/page-about/page-about.component
 import { GetStatsService } from './services/get-stats.service';
 import { PageRegistrationComponent } from './components/page-registration/page-registration.component';
 import { PageHotAppointmentsComponent } from './components/page-hot-appointments/page-hot-appointments.component';
-import { TableComponent } from './components/page-hot-appointments/table/table.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +26,7 @@ import { TableComponent } from './components/page-hot-appointments/table/table.c
     PageStatisticsComponent,
     PageAboutComponent,
     PageRegistrationComponent,
-    PageHotAppointmentsComponent,
-    TableComponent
+    PageHotAppointmentsComponent
   ],
   imports: [
     HttpClientModule,

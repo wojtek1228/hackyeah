@@ -3,21 +3,16 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Place</th>
-        <th scope="col">City</th>
         <th scope="col">Address</th>
-        <th scope="col">Phone</th>
-        <th scope="col">Available date</th>
+        <th scope="col">Appointment date</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let a of dataSource">
-        <th scope="row">{{a.position}}</th>
-        <td>{{a.place}}</td>
-        <td>{{a.locality}}</td>
-        <td>{{a.address}}</td>
-        <td>{{a.phone}}</td>
-        <td>{{a.date}}</td>
+        <th scope="row">{{a.id}}</th>
+        <td>{{a.placeName}}</td>
+        <td>{{a.street}}</td>
+        <td>{{a.appointmentDate | date:'medium'}}</td>
       </tr>
-
     </tbody>
   </table>

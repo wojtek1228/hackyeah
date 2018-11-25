@@ -15,6 +15,10 @@
 
 <agm-map *ngIf="statPlaces" [latitude]="lat" [longitude]="lng">
   <agm-marker-cluster [imagePath]="'https://googlemaps.github.io/js-marker-clusterer/images/m'">
-    <agm-marker *ngFor="let p of statPlaces" [latitude]="p.lattitude | number" [longitude]="p.longitude | number"></agm-marker>
+    <agm-marker *ngFor="let p of statPlaces" 
+                [label]="p.daysToAppointment | number" 
+                [latitude]="p.lattitude | number" 
+                [longitude]="p.longitude | number">
+    </agm-marker>
   </agm-marker-cluster>
 </agm-map>
