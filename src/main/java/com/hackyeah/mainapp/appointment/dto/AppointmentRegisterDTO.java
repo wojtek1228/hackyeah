@@ -30,4 +30,6 @@ public class AppointmentRegisterDTO {
     private String postalCode;
 
     private Date subscriptionDate;
+
+    private String email;
 }

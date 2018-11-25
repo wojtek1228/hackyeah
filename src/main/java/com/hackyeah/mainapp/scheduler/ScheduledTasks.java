@@ -1,19 +1,3 @@
-/*
- * Copyright 2012-2015 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.hackyeah.mainapp.scheduler;
 
 import java.text.SimpleDateFormat;
@@ -28,33 +12,47 @@ import org.springframework.stereotype.Component;
 
 import com.hackyeah.mainapp.appointment.dao.AppointmentRegisterRepository;
 import com.hackyeah.mainapp.appointment.entities.AppointmentRegister;
+import com.hackyeah.mainapp.email.EmailSenderService;
 
 @Component
 public class ScheduledTasks {
 
-    private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
+	private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
 
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-    @Autowired
-    private AppointmentRegisterRepository appointmentRegisterRepository;
-    
-    @Scheduled(fixedRate = 10000)
-    public void reportCurrentTime() {
-        log.info("The time is now {}", dateFormat.format(new Date()));
-        
-        log.info("Checking for pending rates {}", dateFormat.format(new Date()));
-        
-        //sprawdz czy minal juz termin wizyty i mail nie zostal wyslany 
-       
-        List<AppointmentRegister> appointments = appointmentRegisterRepository.findByEmailSentFalse();
-        
-        log.info("The time is size {}", appointments.size());
-        
-       //wyslij maila 
-        
-        //zaaktualizuj stan mail wyslany
-        
-        
-    }
+	@Autowired
+	private AppointmentRegisterRepository appointmentRegisterRepository;
+
+	@Autowired
+	private EmailSenderService emailSenderService;
+
+	@Scheduled(fixedRate = 10000)
+	public void reportCurrentTime() {
+		log.info("The time is now {}", dateFormat.format(new Date()));
+
+		log.info("Checking for pending rates {}", dateFormat.format(new Date()));
+
+		// sprawdz czy minal juz termin wizyty i mail nie zostal wyslany
+
+		Date date = new Date();
+		log.info("check for date  {}", date);
+		List<AppointmentRegister> appointments = appointmentRegisterRepository
+				.findByEmailSentFalseAndAppointmentDateLessThan(date);
+
+		log.info("Found Appointments {}", appointments.size());
+
+		// wyslij maila
+		for (AppointmentRegister appointmentRegister : appointments) {
+
+			String email = appointmentRegister.getEmail();
+			if (email != null) {
+				emailSenderService.sendMail(email);
+				appointmentRegister.setEmailSent(true);
+
+				// zaaktualizuj stan mail wyslany
+				appointmentRegisterRepository.save(appointmentRegister);
+			}
+		}
+	}
 }
