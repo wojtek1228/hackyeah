@@ -27,6 +27,15 @@ public class AppointmentRegister {
     @Column(name = "SUBSCRIPTION_DATE")
     private Date subscriptionDate;
 
+    @Column(name = "APPOINTMENT_DATE")
+    private Date appointemntDate;
+    
+    @Column(name = "EMAIL_SENT")
+    private Boolean emailSent;
+    
+    @Column(name = "EMAIL")
+    private String email;
+    
     @Column(name = "LONGITUDE")
     private String longitude;
 
