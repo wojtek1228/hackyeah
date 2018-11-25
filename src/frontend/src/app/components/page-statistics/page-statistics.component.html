@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-6">
+      <mat-form-field>
+          <mat-label>Choose specialization</mat-label>
+          <mat-select #dropdown (selectionChange)="showStats(dropdown.value)">
+            <mat-option *ngFor="let s of specs" value="{{s}}">{{s}}</mat-option>
+          </mat-select>
+        </mat-form-field> 
+  </div>
+  <div class="col-sm-6 text-right" *ngIf="dropdown.value">
+      <a mat-raised-button color="accent" href="{{fileLink}}">Export data</a>  
+  </div>
+</div>
+
+
+<agm-map *ngIf="statPlaces" [latitude]="lat" [longitude]="lng">
+  <agm-marker-cluster [imagePath]="'https://googlemaps.github.io/js-marker-clusterer/images/m'">
+    <agm-marker *ngFor="let p of statPlaces" [latitude]="p.lattitude | number" [longitude]="p.longitude | number"></agm-marker>
+  </agm-marker-cluster>
+</agm-map>
