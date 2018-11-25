@@ -31,9 +31,10 @@ public class EmailSenderService {
 		log.info("------------ sending email -----------------");
 //		String mailTo = "mtesterhackyeah@gmail.com";
 		String mailTo = email;
-		String mailBody = "Hi, \n Please click below link to rate your appoitment \n  link etc  \n\n  Regards \n\n PyroSoft Team";
+		String mailBody = "Hi, \n Please click below link to rate your appoitment \n  link http://pyroSoft-healthCare/rate/apointment/23456  \n\n  Regards \n\n PyroSoft Team";
 		String subject = "Rate your visit!!!";
 		sentEmail(mailTo, mailBody, subject);
+
 
 		log.info("------------ sent !!! -----------------");
 		return ResponseEntity.ok("Mail Sent Success!");
