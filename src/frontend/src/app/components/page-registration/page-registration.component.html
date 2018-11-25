@@ -1,3 +1,5 @@
+<h2>Register for a visit</h2>
+
 <mat-form-field>
   <mat-label>Choose specialization</mat-label>
   <mat-select #spec (selectionChange)="showAppointments(spec.value, local.value)">
@@ -23,7 +25,10 @@
       <p><strong>Available date:</strong> {{p.date | date:'medium'}}</p>
       <p>{{p.address}}<br />{{p.city}}</p>
       <p><strong>Phone:</strong> {{p.phone}}</p>
-      <button mat-raised-button color="primary" (click)="bookAppointment(p)">Book this appointment</button>
+      <button mat-raised-button color="primary" 
+              (click)="bookAppointment(p)">
+              {{bookAppointmentText}}
+      </button>
     </agm-info-window>
   </agm-marker>
 </agm-map>

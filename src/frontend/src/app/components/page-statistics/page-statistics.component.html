@@ -1,9 +1,11 @@
+<h2>Statistics</h2>
+
 <div class="row">
   <div class="col-sm-6">
       <mat-form-field>
           <mat-label>Choose specialization</mat-label>
           <mat-select #dropdown (selectionChange)="showStats(dropdown.value)">
-            <mat-option *ngFor="let s of specs" value="{{s}}">{{s}}</mat-option>
+            <mat-option *ngFor="let s of specs; let i = index" value="{{s}}" disabled="{{i == 1 || i == 2}}">{{s}}</mat-option>
           </mat-select>
         </mat-form-field> 
   </div>

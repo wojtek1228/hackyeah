@@ -1,10 +1,13 @@
-<table class="table table-hover table-sm">
+<h2>Hot Appointments</h2>
+
+<table class="table table-striped table-sm">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Place</th>
         <th scope="col">Address</th>
         <th scope="col">Appointment date</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -13,6 +16,7 @@
         <td>{{a.placeName}}</td>
         <td>{{a.street}}</td>
         <td>{{a.appointmentDate | date:'medium'}}</td>
+        <td><button mat-raised-button color="primary">Book this appointment</button></td>
       </tr>
     </tbody>
   </table>

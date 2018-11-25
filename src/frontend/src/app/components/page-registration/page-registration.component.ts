@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { specialisations, locations } from './../../services/data.model';
 import { GetStatsService } from './../../services/get-stats.service';
 
@@ -8,7 +8,7 @@ import { GetStatsService } from './../../services/get-stats.service';
   templateUrl: './page-registration.component.html',
   styleUrls: ['./page-registration.component.scss']
 })
-export class PageRegistrationComponent implements OnInit {
+export class PageRegistrationComponent implements OnDestroy {
 
   specs = specialisations;
   locals = locations;
@@ -16,6 +16,7 @@ export class PageRegistrationComponent implements OnInit {
   mapPlaces;
   lat: number;
   lng: number;
+  bookAppointmentText = 'Book this appointment!';
 
   constructor(private getStatsService: GetStatsService) { }
 
@@ -45,6 +46,7 @@ export class PageRegistrationComponent implements OnInit {
       obj['date'] = element.attributes['dates']['date'];
       obj['long'] = element.attributes.longitude;
       obj['lat'] = element.attributes.latitude;
+      obj['nip'] = element.attributes['nip-provider'];
       appointments.push(obj);
     });
     this.mapPlaces = appointments;
@@ -57,7 +59,15 @@ export class PageRegistrationComponent implements OnInit {
     this.lng = Number(this.mapPlaces[0].long);
   }
 
-  ngOnInit() {
+  bookAppointment(appointment) {
+    console.log('book!', appointment);
+    this.bookAppointmentText = 'Booked! Check your e-mail';
+  }
+
+  ngOnDestroy() {
+    if (this.placesSub) {
+      this.placesSub.unsubscribe();
+    }
   }
 
 }
