@@ -32,4 +32,14 @@ public class AppointmentRegisterService {
         return list;
     }
 
+    public boolean createNewAppointmentRegister(String nip, AppointmentRegister appointmentRegister){
+
+        AppointmentRegister ap =  appointmentRegisterRepository.save(appointmentRegister);
+        if(ap!=null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }
