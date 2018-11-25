@@ -16,7 +16,7 @@
   </mat-select>
 </mat-form-field> 
 
-<agm-map *ngIf="mapPlaces" [latitude]="lat" [longitude]="lng">
+<agm-map *ngIf="mapPlaces" [latitude]="lat" [longitude]="lng" [zoom]="13">
   <agm-marker *ngFor="let p of mapPlaces" 
               [latitude]="p.lat | number" 
               [longitude]="p.long | number">
