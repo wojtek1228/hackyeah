@@ -55,8 +55,14 @@ public class AppointmentRegister {
     private String city;
 
     @Column(name = "HOME_NUMBER")
-    private Date homeNumber;
+    private String homeNumber;
 
     @Column(name = "POSTAL_CODE")
     private String postalCode;
+
+    @Column(name = "PLACE_NIP")
+    private String placeNip;
+
+    @Column(name = "STREET")
+    private String street;
 }
