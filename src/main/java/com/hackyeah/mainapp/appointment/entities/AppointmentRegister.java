@@ -2,6 +2,7 @@ package com.hackyeah.mainapp.appointment.entities;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,7 +14,8 @@ import java.util.Date;
 public class AppointmentRegister {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
     @Column(name = "ID")
     private String id;
 
@@ -28,7 +30,7 @@ public class AppointmentRegister {
     private Date subscriptionDate;
 
     @Column(name = "APPOINTMENT_DATE")
-    private Date appointemntDate;
+    private Date appointmentDate;
     				
     @Column(name = "EMAIL_SENT")
     private Boolean emailSent;

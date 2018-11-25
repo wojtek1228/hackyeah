@@ -28,7 +28,7 @@ public class AppointmentRegisterController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value = "/appointmentRegister/{nip}", produces = "application/json")
-    public ResponseEntity getEntity(@PathVariable("nip") String nip, AppointmentRegister appointmentRegister){
+    public ResponseEntity getEntity(@PathVariable("nip") String nip, @RequestBody AppointmentRegister appointmentRegister){
 
 
 

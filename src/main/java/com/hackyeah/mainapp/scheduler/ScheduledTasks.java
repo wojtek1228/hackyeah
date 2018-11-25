@@ -38,7 +38,7 @@ public class ScheduledTasks {
 		Date date = new Date();
 		log.info("check for date  {}", date);
 		List<AppointmentRegister> appointments = appointmentRegisterRepository
-				.findByEmailSentFalseAndAppointemntDateLessThan(date);
+				.findByEmailSentFalseAndAppointmentDateLessThan(date);
 
 		log.info("Found Appointments {}", appointments.size());
 

@@ -21,7 +21,7 @@ public interface AppointmentRegisterRepository extends CrudRepository<Appointmen
     public List<Object[]> findBySpecializationGroupByDaysToAppointmentAverage(@Param("specialization") Specialization specialization);
     
 //    @Query("select u.city, avg(u.daysToAppointment) from AppointmentRegister u where u.specialization = :specialization group by u.city")
-    public List<AppointmentRegister> findByEmailSentFalseAndAppointemntDateLessThan(Date dateEnd);
+    public List<AppointmentRegister> findByEmailSentFalseAndAppointmentDateLessThan(Date dateEnd);
 //    AppointemntDateAndAppointemntDateGreaterThanAnd
 
 }
