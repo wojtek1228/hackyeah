@@ -29,7 +29,7 @@ public class AppointmentRegister {
 
     @Column(name = "APPOINTMENT_DATE")
     private Date appointemntDate;
-    
+    				
     @Column(name = "EMAIL_SENT")
     private Boolean emailSent;
     
